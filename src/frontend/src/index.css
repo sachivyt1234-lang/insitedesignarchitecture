@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Dark cyber-architecture palette */
+    --background: 0.07 0.018 258;
+    --foreground: 0.97 0.012 270;
+    --card: 0.11 0.022 260;
+    --card-foreground: 0.97 0.012 270;
+    --popover: 0.13 0.025 260;
+    --popover-foreground: 0.97 0.012 270;
+    --primary: 0.85 0.14 200;
+    --primary-foreground: 0.07 0.018 258;
+    --secondary: 0.65 0.27 330;
+    --secondary-foreground: 0.97 0.012 270;
+    --muted: 0.14 0.02 260;
+    --muted-foreground: 0.72 0.028 260;
+    --accent: 0.6 0.3 300;
+    --accent-foreground: 0.97 0.012 270;
+    --destructive: 0.65 0.27 330;
+    --destructive-foreground: 0.97 0.012 270;
+    --border: 0.22 0.03 260;
+    --input: 0.18 0.025 260;
+    --ring: 0.85 0.14 200;
+    --chart-1: 0.85 0.14 200;
+    --chart-2: 0.65 0.27 330;
+    --chart-3: 0.72 0.18 50;
+    --chart-4: 0.88 0.22 155;
+    --chart-5: 0.55 0.22 262;
+    --sidebar: 0.09 0.02 258;
+    --sidebar-foreground: 0.97 0.012 270;
+    --sidebar-primary: 0.85 0.14 200;
+    --sidebar-primary-foreground: 0.07 0.018 258;
+    --sidebar-accent: 0.14 0.02 260;
+    --sidebar-accent-foreground: 0.97 0.012 270;
+    --sidebar-border: 0.22 0.03 260;
+    --sidebar-ring: 0.85 0.14 200;
+
+    /* Neon accent custom vars */
+    --neon-cyan: oklch(0.85 0.14 200);
+    --neon-blue: oklch(0.55 0.22 262);
+    --neon-magenta: oklch(0.65 0.27 330);
+    --neon-purple: oklch(0.6 0.3 300);
+    --neon-orange: oklch(0.72 0.18 50);
+    --neon-green: oklch(0.88 0.22 155);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  .neon-text-cyan {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px oklch(0.85 0.14 200 / 0.4);
+  }
+
+  .neon-text-magenta {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 20px var(--neon-magenta), 0 0 40px
+      oklch(0.65 0.27 330 / 0.4);
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 0 20px oklch(0.85 0.14 200 / 0.5), 0 0 60px
+      oklch(0.85 0.14 200 / 0.2);
+  }
+
+  .neon-glow-magenta {
+    box-shadow: 0 0 20px oklch(0.65 0.27 330 / 0.5), 0 0 60px
+      oklch(0.65 0.27 330 / 0.2);
+  }
+
+  .neon-border-cyan {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 12px oklch(0.85 0.14 200 / 0.4), inset 0 0 12px
+      oklch(0.85 0.14 200 / 0.05);
+  }
+
+  .neon-border-magenta {
+    border-color: var(--neon-magenta);
+    box-shadow: 0 0 12px oklch(0.65 0.27 330 / 0.4), inset 0 0 12px
+      oklch(0.65 0.27 330 / 0.05);
+  }
+
+  .gradient-headline {
+    background: linear-gradient(
+      135deg,
+      var(--neon-orange) 0%,
+      #ffffff 40%,
+      var(--neon-cyan) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: oklch(0.11 0.022 260 / 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .hero-grid {
+    background-image: linear-gradient(
+        oklch(0.85 0.14 200 / 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, oklch(0.85 0.14 200 / 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
